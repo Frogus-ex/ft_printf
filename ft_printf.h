@@ -18,7 +18,6 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <stdarg.h>
-# include "libft.h"
 
 int		ft_putstr(char *str);
 int		ft_unsigned(unsigned int n);

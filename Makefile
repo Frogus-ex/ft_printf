@@ -11,7 +11,7 @@ SRC  = ft_putstr.c \
 
 OBJ  = $(SRC:.c=.o)
 
-CFLAGS  = -Wall -Wextra -Werror
+CFLAGS  = -Wall -Wextra -Werror 
 
 all: $(NAME)
 
