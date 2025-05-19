@@ -8,6 +8,7 @@ SRC  = ft_putstr.c \
 	ft_putnbr.c \
 	ft_puthex_min.c \
 	ft_puthex_maj.c \
+	ptr_format.c \
 
 OBJ  = $(SRC:.c=.o)
 

@@ -24,8 +24,9 @@ int		ft_unsigned(unsigned int n);
 int		ft_putchar(char c);
 int		ft_printf(const char *ptr, ...);
 size_t	ft_putaddr(void *addr);
-int		ft_putnbr(int n);
+int		ft_putnbr(long long n);
 int		ft_puthex_min(unsigned int n);
 int		ft_puthex_maj(unsigned int n);
+int		ptr_format(char c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tlorette <tlorette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 14:39:41 by tlorette          #+#    #+#             */
-/*   Updated: 2025/05/12 14:39:41 by tlorette         ###   ########.fr       */
+/*   Updated: 2025/05/16 15:23:39 by tlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_mixer(va_list ap, const char ptr)
 	else if (ptr == 'd' || ptr == 'i')
 		count += ft_putnbr(va_arg(ap, int));
 	else if (ptr == 'u')
-		count += ft_unsigned(va_arg(ap, int));
+		count += ft_unsigned(va_arg(ap, unsigned int));
 	else if (ptr == 'x')
 		count += ft_puthex_min(va_arg(ap, int));
 	else if (ptr == 'X')
@@ -47,11 +47,8 @@ int	ft_printf(const char *ptr, ...)
 	va_start(ap, ptr);
 	while (ptr[i])
 	{
-		if (ptr[i] == '%')
-		{
-			count += ft_mixer(ap, ptr[i + 1]);
-			i++;
-		}
+		if (ptr[i] == '%' && ptr_format(ptr[i + 1]) > 0)
+			count += ft_mixer(ap, ptr[++i]);
 		else
 			count += ft_putchar(ptr[i]);
 		i++;
